@@ -8,24 +8,25 @@
 <link rel="icon" 
 type="image/png" 
 href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
+</head>
+</head>
 
-<style>
-ul
-{
-list-style-type:none;
-margin:0;
-padding:0;
-}
-li
-{
-display:inline;
-align:center;
-}
-</style>
+<body style="background-color:white;">
 
-<h1> Welcome to H.E.A.R.T!</h1> 
+<!The header is the div that holds both the logo and the welcome message. The logo is created first in the
+logoContainer div. After that, the welcome to H.E.A.R.T message is created inside of another div called welcome>
+<div id="header">
+<div id="logoContainer">	
+<img src ="http://static.ibsrv.net/car-pictures/diy-electric-car/electric-car-plans.jpg";>
+</div>
+<div id="welcome">
+	<h1> Welcome to H.E.A.R.T!</h1>
+</div>
+</div>
 
-<div class="horizontal">
+<! This div holds the menu bar that anybody (you do not have to be logged in) can see. This div uses a class
+identifier instead of an id. Only difference is in the CSS>	
+<div class="centeredMenu">
 <ul>
 <li><h2><a href="index.html">Home</a></h2></li>
 <li><h2><a href="registration.php">Register</a></h2></li>
@@ -36,13 +37,35 @@ align:center;
 </ul>
 </div>
 
+
+
+<! This div holds the sidebar information that will not be displayed until the user logs in>
+<div id="sideBar">
+<ul>
+<li><h2>Location Overview</h2></li>
+<li><h2>Location History</h2></li>
+<li><h2>Compare Locations</h2></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
 <br>
 <br>
 
-<img border="3" src="http://static.ibsrv.net/car-pictures/diy-electric-car/electric-car-plans.jpg" alt="h.e.a.r.t" width="600" height="528">
-<img border="3" src="http://static.ibsrv.net/car-pictures/diy-electric-car/electric-car-plans.jpg" alt="h.e.a.r.t" width="600" height="528">
 
+<div id="content">
 <h6>Image credits go to carsdirect.com</h6>
+</div>
+</body>
+
+
+
 
 </section><!--/ #content -->
 
