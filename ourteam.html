@@ -1,37 +1,32 @@
-<html>
-<title>H.E.A.R.T</title>
+<!DOCTYPE html>
+
 <head>
 
+<LINK REL=StyleSheet HREF="main.css" TYPE="text/css" MEDIA=screen>
+<title>H.E.A.R.T</title>
 <head profile="H.E.A.R.T">
 <link rel="icon" 
-      type="image/png" 
-      href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
+type="image/png" 
+href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
+</head>
+</head>
 
-<LINK REL=StyleSheet href="main.css" TYPE="text/css" MEDIA=screen>
+<body style="background-color:white;">
 
-<body>
-<h1> Welcome to H.E.A.R.T!</h1>
+<!The header is the div that holds both the logo and the welcome message. The logo is created first in the
+logoContainer div. After that, the welcome to H.E.A.R.T message is created inside of another div called welcome>
+<div id="header">
+<div id="logoContainer">	
+<img src ="http://static.ibsrv.net/car-pictures/diy-electric-car/electric-car-plans.jpg";>
+</div>
+<div id="welcome">
+	<h1> Welcome to H.E.A.R.T!</h1>
+</div>
+</div>
 
-<style>
-ul
-{
-list-style-type:none;
-margin:0;
-padding:0;
-}
-li
-{
-display:inline;
-align:center;
-}
-h4
-{
-align:left;
-color:black;
-}
-</style>
-
-<div class="horizontal">
+<! This div holds the menu bar that anybody (you do not have to be logged in) can see. This div uses a class
+identifier instead of an id. Only difference is in the CSS>	
+<div class="centeredMenu">
 <ul>
 <li><h2><a href="index.html">Home</a></h2></li>
 <li><h2><a href="registration.php">Register</a></h2></li>
@@ -42,12 +37,9 @@ color:black;
 </ul>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-	
-	<section class="team-member type-1 clearfix">
+
+
+<section class="team-member type-1 clearfix">
 		
 			<article class="team-item">
 
@@ -68,49 +60,6 @@ color:black;
 		
 			<article class="team-item">
 
-									<img class="team-image" src="imageimageimageimageimageimageimage" alt="Kyle" />
-				
-				<h5 class="team-title">Kyle</h5>
-
-			</article><!--/ .team-item-->
-
-		
-			<article class="team-item">
-
-									<img class="team-image" src="imageimageimageimageimageimageimageimage" alt="team member" />
-				
-				<h5 class="team-title">team member</h5>
-
-			</article><!--/ .team-item-->
-
-		
-			<article class="team-item">
-
-									<img class="team-image" src="imageimageimageimageimageimage" alt="team member" />
-				
-				<h5 class="team-title">team member</h5>
-
-			</article><!--/ .team-item-->
-
-		
-			<article class="team-item">
-
-									<img class="team-image" src="imageimageimageimageimageimage" alt="team member" />
-				
-				<h5 class="team-title">team member</h5>
-
-			</article><!--/ .team-item-->
-
-			</section><!--/ .team-member-->
-
-	
-<br/>
-
-			
-	<section class="team-member type-1 clearfix">
-		
-			<article class="team-item">
-
 									<img class="team-image" src="https://scontent-b-iad.xx.fbcdn.net/hphotos-ash4/t1/1004974_10152247705706079_1855953424_n.jpg" alt="Connor M." />
 				
 				<h5 class="team-title">Connor M.</h5>
@@ -120,68 +69,38 @@ color:black;
 		
 			<article class="team-item">
 
-									<img class="team-image" src="imageimageimageimageimageimage" alt="team member" />
-				
-				<h5 class="team-title">team member</h5>
-
-			</article><!--/ .team-item-->
-
-		
-			<article class="team-item">
-
-									<img class="team-image" src="imageimageimageimageimage" alt="team member" />
-				
-				<h5 class="team-title">team member</h5>
-
-			</article><!--/ .team-item-->
-
-		
-			<article class="team-item">
-
-									<img class="team-image" src="imageimageimageimageimageimage" alt="team member" />
-				
-				<h5 class="team-title">team member</h5>
-
-			</article><!--/ .team-item-->
-
-		
-			<article class="team-item">
-
-									<img class="team-image" src="imageimageimageimageimageimage" alt="team member" />
-				
-				<h5 class="team-title">team member</h5>
-
-			</article><!--/ .team-item-->
-
-		
-			<article class="team-item">
-
-									<img class="team-image" src="team member" alt="team member" />
-				
-				<h5 class="team-title">team member</h5>
-
-			</article><!--/ .team-item-->
-
-			</section><!--/ .team-member-->
-
-
+									
 </div>			
 </div>			
 </div>
 
-	
+
+
+<br>
+<br>
+
+
+<div id="content">
+
+</div>
+</body>
+
+
+
+
 </section><!--/ #content -->
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>		
-	
+<!--these links below are the only way to display the images in the circles on the Our Team page -->
+<!--there doesnt seem to be a way to change the properties of the register, log in, about and contact pages either-->
 
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>		
 <link rel='stylesheet' id='tmm_theme_style-css'  href='http://passportparking.com/wp-content/themes/axioma/style.css?ver=3.7.1' type='text/css' media='all' />
 <link rel='stylesheet' id='tmm_skeleton-css'  href='http://passportparking.com/wp-content/themes/axioma/css/skeleton.css?ver=3.7.1' type='text/css' media='all' />
 <link rel='stylesheet' id='tmm_layout-css'  href='http://passportparking.com/wp-content/themes/axioma/css/layout.css?ver=3.7.1' type='text/css' media='all' />
 <link rel='stylesheet' id='tmm_custom1-css'  href='http://passportparking.com/wp-content/themes/axioma/css/custom1.css?ver=3.7.1' type='text/css' media='all' />
 <link rel='stylesheet' id='tmm_custom2-css'  href='http://passportparking.com/wp-content/themes/axioma/css/custom2.css?ver=3.7.1' type='text/css' media='all' />
 <link rel='stylesheet' id='tmm_fancybox-css'  href='http://passportparking.com/wp-content/themes/axioma/js/fancybox/jquery.fancybox.css?ver=3.7.1' type='text/css' media='all' />
-
-</div>
-
 </html>
+	
+	
+	
