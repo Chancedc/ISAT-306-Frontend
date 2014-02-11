@@ -5,32 +5,32 @@ session_start();
 <!DOCTYPE html>
 
 <head>
-<title>H.E.A.R.T</title>
 
 <LINK REL=StyleSheet HREF="main.css" TYPE="text/css" MEDIA=screen>
+<title>H.E.A.R.T</title>
+<head profile="H.E.A.R.T">
+<link rel="icon" 
+type="image/png" 
+href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
+</head>
+</head>
 
-<h1> Welcome to H.E.A.R.T!</h1> 
+<body style="background-color:white;">
 
-<style>
-ul
-{
-list-style-type:none;
-margin:0;
-padding:0;
-align:left;
-}
-li
-{
-display:inline;
-align:center;
-}
-h4
-{
-align:justify;
-}
-</style>
+<!The header is the div that holds both the logo and the welcome message. The logo is created first in the
+logoContainer div. After that, the welcome to H.E.A.R.T message is created inside of another div called welcome>
+<div id="header">
+<div id="logoContainer">	
+<img src ="http://static.ibsrv.net/car-pictures/diy-electric-car/electric-car-plans.jpg";>
+</div>
+<div id="welcome">
+	<h1> Welcome to H.E.A.R.T!</h1>
+</div>
+</div>
 
-<div class="horizontal">
+<! This div holds the menu bar that anybody (you do not have to be logged in) can see. This div uses a class
+identifier instead of an id. Only difference is in the CSS>	
+<div class="centeredMenu">
 <ul>
 <li><h2><a href="index.html">Home</a></h2></li>
 <li><h2><a href="registration.php">Register</a></h2></li>
@@ -41,6 +41,40 @@ align:justify;
 </ul>
 </div>
 
+</div>
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+
+<div id="content">
+
+</div>
+</body>
+
+
+
+
+</section><!--/ #content -->
+
+<!--these links below are the only way to display the images in the circles on the Our Team page -->
+<!--there doesnt seem to be a way to change the properties of the register, log in, about and contact pages either-->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>		
+<link rel='stylesheet' id='tmm_theme_style-css'  href='http://passportparking.com/wp-content/themes/axioma/style.css?ver=3.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tmm_skeleton-css'  href='http://passportparking.com/wp-content/themes/axioma/css/skeleton.css?ver=3.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tmm_layout-css'  href='http://passportparking.com/wp-content/themes/axioma/css/layout.css?ver=3.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tmm_custom1-css'  href='http://passportparking.com/wp-content/themes/axioma/css/custom1.css?ver=3.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tmm_custom2-css'  href='http://passportparking.com/wp-content/themes/axioma/css/custom2.css?ver=3.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tmm_fancybox-css'  href='http://passportparking.com/wp-content/themes/axioma/js/fancybox/jquery.fancybox.css?ver=3.7.1' type='text/css' media='all' />
+</html>
 <link rel="icon" 
       type="image/png" 
       href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
@@ -49,7 +83,7 @@ align:justify;
 <form method='post' action ='login.php'>
 <table width='400' border='5' align='center'
 <tr>
-<td colspan='5' align='center'><h2>Login:</h2></td>
+<td colspan='5' align='center'><h2>Log in:</h2></td>
 </tr>
 
 <tr>
