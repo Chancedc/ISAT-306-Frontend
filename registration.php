@@ -34,18 +34,12 @@ identifier instead of an id. Only difference is in the CSS>
 <ul>
 <li><h2><a href="index.html">Home</a></h2></li>
 <li><h2><a href="registration.php">Register</a></h2></li>
-<li><h2><a href="login.php">Log in</a></h2></li>
+<li><h2><a href="login.php">Log In</a></h2></li>
 <li><h2><a href="about.html">About</a></h2></li>
 <li><h2><a href="ourteam.html">Our Team</a></h2></li>
 <li><h2><a href="contact.html">Contact</a></h2></li>
 </ul>
 </div>
-
-
-
-
-
-
 
 
 
@@ -56,45 +50,30 @@ identifier instead of an id. Only difference is in the CSS>
 <div id="content">
 </div>
 </body>
-
-
-
-
 </section><!--/ #content -->
 
-
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>		
-						
+	
+
+<h2> Register:</h4>
+ <body>
+  <form action="verify.php" method="post" name="register">
+    Username: <input type="text" name="username" />
+    Password: <input type="text" name="password" />
+    Email: <input type="text" name="email" />
+	<input type="hidden" name="form_submitted" value="1"/> 
+  <input type="submit" />
+  </form>
+ </body>
+
+
+
+
+<br>
+
 <ul>
-<form method='post' action ='registration.php'>
-<table width='400' border='5' align='center'
-<tr>
-<td colspan='5' align='center'><h2>Register:</h2></td>
-</tr>
-
-<tr>
-<td align='center'>Username:</td>
-<td><input type='text' name='name' /></td></tr>
-<tr>
-
-<tr>
-<td align='center'>Email:</td>
-<td><input type='text' name='email' /></td>
-</tr>
-
-<td align='center'>Password:</td>
-<td><input type='password' name='pass' /></td>
-</tr>
-
-<tr>
-<td colspan='5' align='center'><input type='submit' name='submit'
-value='Submit' /></td>
-</tr>
-
-</table>
-</form>
-
-<h4>Already Registered?</h4><a href='login.php'>Log in here</a>
+<h4>Already Registered?<a href='login.php'>       Log in here</a></h4>
+</ul>
 
 <br>
 <br>
@@ -104,7 +83,7 @@ value='Submit' /></td>
 <br>
 <br>
 
-	</section><!--/ #content -->
+</section><!--/ #content -->
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>		
 	
@@ -152,7 +131,7 @@ $run = mysql_query($check_email);
 
 if(mysql_num_rows($run)>0){
 
-echo "<script>alert('Email $user_email is already registered for Online Academic Planner, please use a different email')</script>";
+echo "<script>alert('Email $user_email is already registered for H.E.A.R.T, please use a different email')</script>";
 exit();
 }
 
