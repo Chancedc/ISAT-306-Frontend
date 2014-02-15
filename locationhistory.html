@@ -1,20 +1,53 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>H.E.A.R.T</title>
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
 
-<LINK REL=StyleSheet HREF="main.css" TYPE="text/css" MEDIA=screen>
-<title>H.E.A.R.T</title>
-<head profile="H.E.A.R.T">
-<link rel="icon" 
-type="image/png" 
-href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
-</head>
-</head>
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style type="text/css">
+
+#my-map {
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+-->
+</style></head>
+
+<div id="header">
+
+<p>&nbsp;</p>
+</div>
+ 
+</body>
 
 <body style="background-color:white;">
 
 <!The header is the div that holds both the logo and the welcome message. The logo is created first in the
 logoContainer div. After that, the welcome to H.E.A.R.T message is created inside of another div called welcome>
+
 <div id="header">
 <div id="logoContainer">	
 <img src ="http://static.ibsrv.net/car-pictures/diy-electric-car/electric-car-plans.jpg";>
@@ -27,6 +60,7 @@ logoContainer div. After that, the welcome to H.E.A.R.T message is created insid
 <! This div holds the menu bar that anybody (you do not have to be logged in) can see. This div uses a class
 identifier instead of an id. Only difference is in the CSS>	
 <div class="centeredMenu">
+
 <ul>
 <li><h2><a href="index.html">Home</a></h2></li>
 <li><h2><a href="registration.php">Register</a></h2></li>
@@ -40,24 +74,21 @@ identifier instead of an id. Only difference is in the CSS>
 
 
 <! This div holds the sidebar information that will not be displayed until the user logs in>
+
 <div id="sideBar">
 <ul>
-<li><h2>Location Overview</h2></li>
-<li><h2>Location History</h2></li>
-<li><h2>Compare Locations</h2></li>
+<li><h2><a href="locationoverview.html">Location Overview</a></h2></li>
+<li><h2><a href="locationhistory.html">Location History</a></h2></li>
+<li><h2><a href="comparelocations.html">Compare Locations</a></h2></li>
 </ul>
 </div>
 
 
 
-<p> Location history <p>
-
-
-
-
 <br>
 <br>
 
+ <div id="my-map"></div>
 
 <div id="content">
 
@@ -65,7 +96,75 @@ identifier instead of an id. Only difference is in the CSS>
 </body>
 
 
+<script type="text/javascript"
 
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzowqrS-4twB_m_QPLE0iZLXB0soddDqA&sensor=false"></script>
+
+<script>
+'use strict';
+
+document.addEventListener('DOMContentLoaded', drawMap);
+
+// make map available in global scope
+var map;
+
+function drawMap() {
+	var homeLocation1 = new google.maps.LatLng(38.4494444, -78.8691667),
+             homeLocation2 = new google.maps.LatLng (38.440191, -78.875080);
+
+	var mapOptions = {
+	  'center' : new google.maps.LatLng(38.4494444, -78.8691667),
+	  'zoom' : 14,
+	  'mapTypeId' : google.maps.MapTypeId.ROADMAP,
+	  'draggable' : true
+	};
+	
+	map = new google.maps.Map(document.getElementById("my-map"), mapOptions);
+	
+	var marker1 = new google.maps.Marker({
+		position: homeLocation1,
+		map: map,
+		title: 'Your Home Location1'
+});
+
+var marker2 = new google.maps.Marker({
+position: homeLocation2,
+map: map,
+title: 'Your Home Location2'
+});
+
+var popupContent1 = 'Your Home1 <br />'; 
+popupContent1 += 'By H.E.A.R.T Systems<br   /> ';
+popupContent1 += ' ';
+
+var popupContent2 = 'Your Home2 <br />'; 
+popupContent2 += 'By H.E.A.R.T Systems<br   /> ';
+popupContent2 += ' ';
+
+      var infowindow1 = new google.maps.InfoWindow({
+                content: popupContent1,
+                maxWidth: 270
+  });
+
+ var  infowindow2 = new google.maps.InfoWindow({
+                content: popupContent2,
+                maxWidth: 270
+
+});
+
+
+google.maps.event.addListener(marker1, 'click', function() {
+    infowindow1.open(map, marker1);
+  });
+
+google.maps.event.addListener(marker2, 'click', function() {
+    infowindow2.open(map, marker2);
+  });
+
+}
+ 
+
+</script>
 
 </section><!--/ #content -->
 
@@ -79,4 +178,7 @@ identifier instead of an id. Only difference is in the CSS>
 <link rel='stylesheet' id='tmm_custom1-css'  href='http://passportparking.com/wp-content/themes/axioma/css/custom1.css?ver=3.7.1' type='text/css' media='all' />
 <link rel='stylesheet' id='tmm_custom2-css'  href='http://passportparking.com/wp-content/themes/axioma/css/custom2.css?ver=3.7.1' type='text/css' media='all' />
 <link rel='stylesheet' id='tmm_fancybox-css'  href='http://passportparking.com/wp-content/themes/axioma/js/fancybox/jquery.fancybox.css?ver=3.7.1' type='text/css' media='all' />
+
+ 
 </html>
+	
