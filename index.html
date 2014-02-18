@@ -13,48 +13,43 @@ href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_S
 
 <body style="background-color:white;">
 
-<!The header is the div that holds both the logo and the welcome message. The logo is created first in the
-logoContainer div. After that, the welcome to H.E.A.R.T message is created inside of another div called welcome>
-<div id="header">
-<div id="logoContainer">	
-<img src ="http://static.ibsrv.net/car-pictures/diy-electric-car/electric-car-plans.jpg";>
-</div>
-<div id="welcome">
-	<h1> Welcome to H.E.A.R.T!</h1>
-</div>
-<div id="loginContainer">
-<div id="login">
-<ul>
-<form>
-Email: <input type="text" name="email"><br>
-Password: <input type"text" name="password"><br>
-<br>
-<input type="submit" value="Submit">
-</form>
-</div>
-</div>
-</div>
+
+<table id="headerTable">
+	<tr id="headerRow">
+	 	<td id="image"><img src ="http://static.ibsrv.net/car-pictures/diy-electric-car/electric-car-plans.jpg";></td>
+		<td id="welcome"><h1> Welcome to H.E.A.R.T!</h1></td>
+		<td id="loginBox">
+			<form>
+				Email: <input id="email" type="text" name="email">
+				<br>
+				Password: <input id="password" type="password" name="password">
+				<br>
+				<input id="submit" type="submit" value="Submit">
+			</form>
+		</td>
+	</tr>
+	<tr id="nonRegisteredMenu">
+		<td id="home"><h3><a href="index.html">Home</a></h3></td>
+		<td id="registration"><h3><a href="registration.php">Register</a></h3></td>
+		<td id="login"><h3><a href="login.php">Log in</a></h3></td>
+		<td id="about"><h3><a href="about.html">About</a></h3></td>
+		<td id="ourTeam"><h3><a href="ourteam.html">Our Team</a></h3></td>
+		<td id="contact"><h3><a href="contact.html">Contact</a></h3></td>
+	</tr>	
+</table>
 
 <! This div holds the menu bar that anybody (you do not have to be logged in) can see. This div uses a class
 identifier instead of an id. Only difference is in the CSS>	
-<div class="centeredMenu">
-<ul>
-<li><h2><a href="index.html">Home</a></h2></li>
-<li><h2><a href="registration.php">Register</a></h2></li>
-<li><h2><a href="login.php">Log in</a></h2></li>
-<li><h2><a href="about.html">About</a></h2></li>
-<li><h2><a href="ourteam.html">Our Team</a></h2></li>
-<li><h2><a href="contact.html">Contact</a></h2></li>
-</ul>
-</div>
-</div>
-
 
 
 
 <div id="content">
 <p> This is the very first page our customer is going to see <p>
 </div>
+
+
+
+
 </body>
 
 

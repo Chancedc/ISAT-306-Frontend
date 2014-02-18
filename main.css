@@ -3,49 +3,134 @@ body, html
 {
 	height:100%;
 }
-
-
-#header
+#headerTable
+{
+	position:relative;
+	float:left;
+	height:10px;
+	width:100%;
+}
+#headerRow
 {
 	float:left;
-	width:100%;
-	height:125px;
 	position:relative;
+	height:131px;
+	width:100%;
+
 }
 
-#logoContainer
+#image
 {
 	float:left;
-	width:175px;
-	height:125px;
-	overflow:hidden;
-	position:absolute;
-	z-index:2;
-	
-	
+	position:relative;
+	height:auto;
+	width:13%;
+	height:132px;
+	border-right:4px solid black;
+}
+
+img
+{
+	width:100%;
+
 }
 #welcome
 {
 	float:left;
 	position:relative;
-	left:175px;
-	width:1000px;
-	height:50px;
-	padding:37.5px;
+	width:69.85%;
 	text-align:center;
-	overflow:hidden;
-	z-index:1;
-}
-#loginContainer
-{
-	float:right;
-	position:absolute;
-	width:175px;
-	height:175px;
-	left:1250px;
-	z-index:2;
+	padding: 25px 0px 25px ;
+	height:82px;
 }
 
+#loginBox
+{
+	float:left;
+	position:relative;
+	width:16.59%;
+	height:132px;
+	border-left:4px solid black;
+}
+
+
+
+
+#nonRegisteredMenu
+{
+	float:left;
+	position:relative;
+	float:left;
+	width:100%;
+	border-top: 4px solid black;
+	border-bottom:4px solid black;
+}
+
+#email
+{
+	position:relative;
+	width:150px;
+	left:32px;
+}
+#password
+{
+	position:relative;
+	width:150px;
+}
+#submit
+{
+	float:right;
+	position:relative;
+	top:38px;
+}
+
+#home
+{
+	float:left;
+	position:relative;
+	width:16.4%;
+	text-align:center;
+	border-right:4px solid black;
+}
+#registration
+{
+	float:left;
+	position:relative;
+	width:16.4%;
+	text-align:center;
+	border-right:4px solid black;
+}
+#login
+{
+	float:left;
+	position:relative;
+	width:16.4%;
+	text-align:center;
+	border-right:4px solid black;
+}
+#about
+{
+	float:left;
+	position:relative;
+	width:16.4%;
+	text-align:center;
+	border-right:4px solid black;
+}
+#ourTeam
+{
+	float:left;
+	position:relative;
+	width:16.4%;
+	text-align:center;
+	border-right:4px solid black;
+}
+#contact
+{
+	float:left;
+	position:relative;
+	width:16.4%;
+	text-align:center;
+}
 #sideBar
 {
 	float:left;
@@ -98,6 +183,7 @@ body, html
 	color:#000;
 	width:100%;
 	text-align:center;
+	position:relative;
 	
 }
 
