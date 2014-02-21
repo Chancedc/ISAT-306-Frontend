@@ -2,6 +2,8 @@
 
 <head>
 
+
+<script src="Chart.js-master/Chart.js"></script>
 <LINK REL=StyleSheet HREF="main.css" TYPE="text/css" MEDIA=screen>
 <title>H.E.A.R.T</title>
 <head profile="H.E.A.R.T">
@@ -28,28 +30,15 @@ logoContainer div. After that, the welcome to H.E.A.R.T message is created insid
 identifier instead of an id. Only difference is in the CSS>	
 <div class="centeredMenu">
 <ul>
-<li><h2><a href="welcome.php">Home</a></h2></li>
-<li><h2><a href="logout.php">Log Out</a></h2></li>
-
+<li><h2><a href="index.html">Home</a></h2></li>
+<li><h2><a href="registration.php">Register</a></h2></li>
+<li><h2><a href="login.php">Log in</a></h2></li>
+<li><h2><a href="about.html">About</a></h2></li>
+<li><h2><a href="ourteam.html">Our Team</a></h2></li>
+<li><h2><a href="contact.html">Contact</a></h2></li>
 </ul>
 </div>
 
-
-
-<! This div holds the sidebar information that will not be displayed until the user logs in>
-<div id="sideBar">
-
-<ul>
-<li><h2><a href="editprofile.html">Edit Profile</a></h2></li>
-<li><h2><a href="locationhistory.html">Location History</a></h2></li>
-<li><h2><a href="comparelocations.html">Compare Locations</a></h2></li>
-
-</ul>
-</div>
-
-
-
-<h4> Edit Profile </h4>
 
 
 
@@ -59,16 +48,40 @@ identifier instead of an id. Only difference is in the CSS>
 
 
 <div id="content">
-<form action="process.php" method="post">
-	Address: <input type="text" name="Address" value="City, State, Zip code"><br>
-	Size:    <input type="text" name="Size" value="Square Feet"><br>
-	Age:     <input type="text" name="Age" value="Years"><br>
-	Number of People: <input type="text" name="People" value="People"><br>	
-	Utility: <input type="text" name="Utility" value="Name"><br>
-	<input type ="submit" value = "submit" name="submit"/>
+<h6>Graph</h6>
+<form action="demo_form.asp">
+	Start: <input type="text" name="Start" value="yyyy-mm-dd hh:mm:ss">
+	End:    <input type="text" name="End" value="yyyy-mm-dd hh:mm:ss"><br>
+	<input type="submit" value="Show Graph"> <br>
+
 </form>
 
-<p>Click the "Submit button and the form-data will be sent to the database.</p>
+<canvas id="myChart" width="400" height="400"></canvas>
+<script type="text/javascript">
+	var data = {
+	labels : ["January","February","March","April","May","June","July"],
+	datasets : [
+		{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [65,59,90,81,56,55,40]
+		},
+		{
+			fillColor : "rgba(128,255,0,0.5)",
+			strokeColor : "rgba(0,102,0,1)",
+			pointColor : "rgba(0,102,0,1)",
+			pointStrokeColor : "#fff",
+			data : [28,48,40,19,96,27,100]
+		}
+	]
+}
+	var ctx = document.getElementById("myChart").getContext("2d");
+	var myNewChart = new Chart(ctx).Line(data);
+
+</script>
+
 </div>
 </body>
 
