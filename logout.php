@@ -1,5 +1,26 @@
-<?php
-session_start();
-session_destroy();
-header("location: login.php");
+<?PHP
+require_once("membersite_config.php");
+
+$fgmembersite->LogOut();
 ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+      <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+      <title>H.E.A.R.T.</title>
+      
+      <script type='text/javascript' src='gen_validatorv31.js'></script>
+</head>
+<body>
+
+<h2>You have logged out</h2>
+<p>
+<a href='login.php'>Log In Again</a>
+<br>
+<br>
+<a href='index.html'>Go to the Main Page</a>
+</p>
+
+</body>
+</html>
