@@ -3,17 +3,17 @@
 	<head>
 		<script type="text/javascript" src="editprofile.js"></script>
 	</head>
-	<body onload="editProfile()">
+	<body>
 		Edit Profile:
 		<br><br><br/>
 		<div id="divProfile">
-			<form>	
+			<form id="editprofileform">	
 				Address: <input type="text" id="address" /><br>
 				Size: <input type="text" id="size" /><br>
 				Age: <input type="text" id="age" /><br>
 				Number of Residents: <input type="text" id="residents" /><br>
-				Utility: <input type="text" id="utility /"><br>
-				<input type="button" id="submit" value="Submit">
+				Utility: <input type="text" id="utility" /><br>
+				<input type="button" id="submit" value="Submit" onclick="process()">
 			</form>
 		</div>
 		<div id="underInput" />
