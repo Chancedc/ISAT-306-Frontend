@@ -26,12 +26,15 @@ echo '<response>';
 	$utility = mysql_real_escape_string($utility);
 	
 	//validate
-	//$invalid = "SELECT * FROM Tablename WHERE address=$address";
-	//if ($invalid) {
-	//	echo "";
-	//}
+	$exists = "SELECT * FROM locations WHERE address=$address";
+	if ($exists != null) {
+		$query = "UPDATE locations SET address=$address, size=$size, ageofhouse=$age, residents=$residents, utility=$utility WHERE primarykey='something'";
+	}
+	else{
+		$query = INSERT INTO locations ('address', 'size', 'ageofhouse', 'residents', 'utility') VALUES ($address, $size, $age, $residents, $utility) WHERE ;
+	}
 	//build query
-	$query = "UPDATE locations SET address=$address, size=$size, ageofhouse=$age, residents=$residents, utility=$utility WHERE primarykey='something'";
+	
 
 		//Execute query */
 	$qry_result = mysql_query($query) or die(mysql_error());	
