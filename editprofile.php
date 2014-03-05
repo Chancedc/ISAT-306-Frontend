@@ -28,7 +28,7 @@ echo '<response>';
 	//validate
 	$exists = "SELECT * FROM locations WHERE address=$address";
 	if ($exists != null) {
-		$query = "UPDATE locations SET address=$address, size=$size, ageofhouse=$age, residents=$residents, utility=$utility WHERE primarykey='something'";
+		$query = "UPDATE locations SET size=$size, ageofhouse=$age, residents=$residents, utility=$utility WHERE address=$address,";
 	}
 	else{
 		$query = INSERT INTO locations ('address', 'size', 'ageofhouse', 'residents', 'utility') VALUES ($address, $size, $age, $residents, $utility) WHERE ;
