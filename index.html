@@ -1,40 +1,54 @@
 <!DOCTYPE html>
+<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css">
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
+</head>
 <title>H.E.A.R.T</title>
 <head profile="H.E.A.R.T">
-</head>
 
-<div data-role="page" id="pageone">
+<body>
+
+<div data-role="page" id="home">
   <div data-role="header">
-    <h4>Welcome To H.E.A.R.T Systems</h4>
+    <h1>H.E.A.R.T Systems</h1>
 <center>
 <img src="https://scontent-a-iad.xx.fbcdn.net/hphotos-frc3/t1/1964783_10152299771486079_243284233_n.jpg">
 </center>
-</div>
+  </div>
 
-    <div data-role="navbar">
+  <div data-role="main" class="ui-content">
+
+   <div data-role="navbar">
       <ul>
+        <li><a href="#home">Home</a></li>
         <li><a href="register.php">Register</a></li>
         <li><a href="login.php">Log In</a></li>
-         <li><a href="about.html"> About</a></li>
-        <li><a href="ourteam.html">Our Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
+         <li><a href="#about"> About</a></li>
+        <li><a href="#ourteam">Our Team</a></li>
+        
       </ul>
     </div>
   </div>
 
-  <div data-role="main" class="ui-content">
-    <h2>Why H.E.A.R.T?</h2><p>As a homeowner, you should be able to monitor your energy usage at your own home, at your friends home, and at your friends, friends, friends home. <br><br>
-With H.E.A.R.T systems, you will have all the information about your home accessible to any device you may have. Read more <a href="about.html">about H.E.A.R.T systems.</a></p>
+  <div data-role="footer">
+   <h1><a href="#contact">Contact Us</a></h1>
   </div>
+</div> 
 
- <div data-role="footer">
- <h1><a href="contact.html">Contact us</a></h1>
- </div>
+<div data-role="page" id="about">
+  <div data-role="header">
+    <h1>Welcome To About</h1>
+<center>
+<p>The purpose of this project is to create an interface for the Home Energy Analyzer, Reader and Tracker. 
+<br><br>H.E.A.R.T. is an application that is used with a home’s already existing electricity 
+sources using sensors and a data collection device, such as Arduino. 
+<br><br>H.E.A.R.T. then brings that information in user-friendly and easy to read/interpret way, such as displaying charts, graphs and other useful data.</p></center>
+</div>
+  </div>
+</div> 
 
 </body>
-</html>
+</html>	
