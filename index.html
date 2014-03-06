@@ -1,38 +1,43 @@
+
 <!DOCTYPE html>
-
-<head profile="H.E.A.R.T">
-
-<LINK REL=StyleSheet HREF="main.css" TYPE="text/css" MEDIA=screen>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
 <title>H.E.A.R.T</title>
-<link rel="icon" 
-type="image/png" 
-href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
-<script type="text/javascript">
-	function validateEmail()
-	{
-		var userEmail = document.getElementById('email').value;
-		document.getElementById('content');
-		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-		if(!filter.test(userEmail))
-		{
-			alert('Please provide a valid email address');
-			userEmail.focus;
-			return false;
-		}
-		else
-		{
-			alert('valid email');
-			return true;
-		}
-
-	}
-	
-</script>
-
+<head profile="H.E.A.R.T">
+<link rel="icon" type="image/png" href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
 </head>
 
-<body style="background-color:white;">
+<body>
+<div data-role="page">
+  <div data-role="header">
+<center><img src="https://scontent-a-iad.xx.fbcdn.net/hphotos-prn1/t1/1959520_10152269341946079_741022278_n.jpg"></center>
+</div>
+
+  <div data-role="main" class="ui-content">
+  <ul>
+<li><h2><a href="index.html">Home</a></h2></li>
+<li><h2><a href="register.php">Register</a></h2></li>
+<li><h2><a href="login.php">Log In</a></h2></li>
+<li><h2><a href="about.html">About</a></h2></li>
+<li><h2><a href="ourteam.html">Our Team</a></h2></li>
+<li><h2><a href="contact.html">Contact</a></h2></li>
+</ul>
+<center>
+<div id="content"><h2>Why H.E.A.R.T?</h2><p>As a homeowner, you should be able to monitor your energy usage at your own home, at your friends home, and at your friends, friends, friends home. <br><br>
+With H.E.A.R.T systems, you will have all the information about your home accessible to any device you may have. Read more <a href="about.html">about H.E.A.R.T systems.</a></p></div>
+</center>
+ </div>
+
+ <div data-role="footer">
+ <h1><a href="contact.html">Contact us</a></h1>
+ </div>
+</div> 
+
+</body>
+</html>
 
 <table id="headerTable">
 	<tr id="headerRow">
@@ -59,31 +64,7 @@ href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_S
 	</tr>	
 </table>
 
-<! This div holds the menu bar that anybody (you do not have to be logged in) can see. This div uses a class
-identifier instead of an id. Only difference is in the CSS>	
-
-
-
-<div id="content">
-<p> This is the very first page our customer is going to see <p>
-</div>
-
-
-
 </body>
 
-<script type="text/javascript" src="script.js"></script>
 
-
-
-<!--these links below are the only way to display the images in the circles on the Our Team page -->
-<!--there doesnt seem to be a way to change the properties of the register, log in, about and contact pages either-->
-
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>		
-<link rel='stylesheet' id='tmm_theme_style-css'  href='http://passportparking.com/wp-content/themes/axioma/style.css?ver=3.7.1' type='text/css' media='all' />
-<link rel='stylesheet' id='tmm_skeleton-css'  href='http://passportparking.com/wp-content/themes/axioma/css/skeleton.css?ver=3.7.1' type='text/css' media='all' />
-<link rel='stylesheet' id='tmm_layout-css'  href='http://passportparking.com/wp-content/themes/axioma/css/layout.css?ver=3.7.1' type='text/css' media='all' />
-<link rel='stylesheet' id='tmm_custom1-css'  href='http://passportparking.com/wp-content/themes/axioma/css/custom1.css?ver=3.7.1' type='text/css' media='all' />
-<link rel='stylesheet' id='tmm_custom2-css'  href='http://passportparking.com/wp-content/themes/axioma/css/custom2.css?ver=3.7.1' type='text/css' media='all' />
-<link rel='stylesheet' id='tmm_fancybox-css'  href='http://passportparking.com/wp-content/themes/axioma/js/fancybox/jquery.fancybox.css?ver=3.7.1' type='text/css' media='all' />
 </html>
