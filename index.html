@@ -1,66 +1,46 @@
 <!DOCTYPE html>
-
-<head profile="H.E.A.R.T">
-
-<LINK REL=StyleSheet HREF="main.css" TYPE="text/css" MEDIA=screen>
-<title>H.E.A.R.T</title>
-<link rel="icon" 
-type="image/png" 
-href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
+<html>
+	<head>
+	<title>H.E.A.R.T</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
 </head>
+<body>
 
-<body style="background-color:white;">
-
-<table id="headerTable">
-	<tr id="headerRow">
-	 	<td id="image"><img src ="/Users/kylesmith/ISAT-306-Frontend/electric-car-plans.jpg";></td>
-		<td id="welcome"><h1> Welcome to H.E.A.R.T!</h1></td>
-		<td id="loginBox">
-			<form id="form">
-				Email: <br>
-				<input id="email" type="text" name="email">
-				<br>
-				Password: <input id="password" type="password" name="password">
-				<br>
-				<input id="submit" type="submit" value="Submit" onclick="submit()">
-			</form>
-		</td>
-	</tr>
-	<tr id="nonRegisteredMenu">
-		<td id="home"><h3><a href="index.html">Home</a></h3></td>
-		<td id="registration"><h3><a href="registration.php">Register</a></h3></td>
-		<td id="login"><h3><a href="login.php">Log in</a></h3></td>
-		<td id="about"><h3><a href="about.html">About</a></h3></td>
-		<td id="ourTeam"><h3><a href="ourteam.html">Our Team</a></h3></td>
-		<td id="contact"><h3><a href="contact.html">Contact</a></h3></td>
-	</tr>	
-</table>
-
-<! This div holds the menu bar that anybody (you do not have to be logged in) can see. This div uses a class
-identifier instead of an id. Only difference is in the CSS>	
+<div data-role="page">
+	<div data-role="header">
+		<h1>H.E.A.R.T Systems</h1>
+	</div><!-- /header -->
 
 
-
-<div id="content">
-<p> This is the very first page our customer is going to see <p>
+<div data-role="navbar">
+	<ul>
+		<li><a href="about.html">About Us</a></li>
+		<li><a href="ourteam.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+	</ul>
 </div>
 
+	<div data-role="content">
+<div id="banner"> <center><h2> Welcome to H.E.A.R.T Systems! </h2></center>
+<center>
+<img src="https://scontent-a-iad.xx.fbcdn.net/hphotos-frc3/t1/1964783_10152299771486079_243284233_n.jpg">
+</center>
+</div>
 
+<ul data-role="listview" data-inset="true">
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Log In</a></li>
+     
+        </ul>
+<!-- /content -->
+
+	
+</div>
 
 </body>
-
-<script type="text/javascript" src="script.js"></script>
-
-
-
-<!--these links below are the only way to display the images in the circles on the Our Team page -->
-<!--there doesnt seem to be a way to change the properties of the register, log in, about and contact pages either-->
-
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>		
-<link rel='stylesheet' id='tmm_theme_style-css'  href='http://passportparking.com/wp-content/themes/axioma/style.css?ver=3.7.1' type='text/css' media='all' />
-<link rel='stylesheet' id='tmm_skeleton-css'  href='http://passportparking.com/wp-content/themes/axioma/css/skeleton.css?ver=3.7.1' type='text/css' media='all' />
-<link rel='stylesheet' id='tmm_layout-css'  href='http://passportparking.com/wp-content/themes/axioma/css/layout.css?ver=3.7.1' type='text/css' media='all' />
-<link rel='stylesheet' id='tmm_custom1-css'  href='http://passportparking.com/wp-content/themes/axioma/css/custom1.css?ver=3.7.1' type='text/css' media='all' />
-<link rel='stylesheet' id='tmm_custom2-css'  href='http://passportparking.com/wp-content/themes/axioma/css/custom2.css?ver=3.7.1' type='text/css' media='all' />
-<link rel='stylesheet' id='tmm_fancybox-css'  href='http://passportparking.com/wp-content/themes/axioma/js/fancybox/jquery.fancybox.css?ver=3.7.1' type='text/css' media='all' />
 </html>
+
+
+
