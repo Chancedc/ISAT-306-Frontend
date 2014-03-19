@@ -1,11 +1,18 @@
 <?php
-    include'db.php';
-    $address=$_POST['Address'];
-    $size=$_POST['Size'];
-    $age=$_POST['Age'];
-    $people=$_POST['People'];
-    $utility=$_POST['Utility'];
-    $n=new db();
-    $n->connect();
-    $n->insert($address,$size,$age,$people,$utility);
+      include_once ('db.php');
+ 
+	  $username = mysql_real_escape_string ( $_POST["username"] );
+	  $password = mysql_real_escape_string ( md5($_POST["password"]) );
+	  /*$fname = mysql_real_escape_string( $_POST["fname"] );
+	  $lname = mysql_real_escape_string( $_POST["lname"] );*/
+ 
+	  $sql = "INSERT INTO userinfo (username, password) VALUES(
+                                           '$username', 
+                                           '$password')";
+	  if ( mysql_query ($sql) )
+	   echo "Inserted Successfully";
+	  else
+	   echo "Insertion Failed";
+
+	mysql_close ();
 ?>
