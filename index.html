@@ -8,25 +8,24 @@
 type="image/png" 
 href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
 <script type="text/javascript">
-	function validateEmail()
+
+function validateEmail()
+{
+	var userEmail = document.getElementById('email').value;
+
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//Explanation:  Look for any character followed by an @ sign with any charcter(s) following. After the characters look for a '.' followed by two to four characters
+	if(!filter.test(userEmail))
 	{
-		var userEmail = document.getElementById('email').value;
-		document.getElementById('content');
-		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-		if(!filter.test(userEmail))
-		{
-			alert('Please provide a valid email address');
-			userEmail.focus;
-			return false;
-		}
-		else
-		{
-			alert('valid email');
-			return true;
-		}
-
+		alert('Please provide a valid email address');
+		userEmail.focus;
 	}
+	else
+	{
+		alert('valid email');
+	}
+
+}
 	
 </script>
 
