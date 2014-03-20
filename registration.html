@@ -22,18 +22,31 @@
   <div data-role="header">
      <h1>Registration</h1>
   </div>
-
-		<form id="myForm" action="http://192.168.3.175/process.php" method="POST">
-			Username: <input type="text" name="username"/><br />
-			Password: <input type="password" name="password"/><br />
-			<!--First Name: <input type="text" name="fname"/><br />
-			Last Name: <input type="text" name="lname"/><br />-->
-			<button id="submit">register</button>
+<div data-role="content">
+<form id="myForm" action="http://192.168.3.175/process.php" method="POST">
+<div data-role="fieldcontain">			Username: <input type="text" name="username"/><br />
+<us>*</us>Username: </label>
+<input type="text" id="username"
+name="username" class="required username" />
+</div>
+	
+<div data-role="fieldcontain">
+	<label for="password">
+		<em>*</em>Password: </label>
+			<input type"password" id="password"
+			name="password" class="required" />
+			</div>
+			
+			<div class="ui-body ui-body-b">
+				<button class="btnLogin" type="submit"
+				data-theme="a"> Log In </button>
+			</div>
 		</form>
- 
-		<div id="ack"></div>
+		</div>
+		</div>
  
 		<script type="text/javascript" src="script/jquery-1.8.2.min.js"></script>
 		<script type="text/javascript" src="script/my_script.js"></script>
 	</body>
+	</html>
 </html>
