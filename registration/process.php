@@ -21,6 +21,6 @@
 }
 else
 {
-	echo "Something went wrong on process.php"
+	echo "Something went wrong on process.php";
 }
 ?>

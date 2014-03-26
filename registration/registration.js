@@ -1,5 +1,9 @@
 $("#submit").click( function() {
  
+alert("click function ran");
+if($("#username").val != "")
+{
+	alert("fields are filled");
 	 $.post( $("#myForm").attr("action"),
 	         $("#myForm :input").serializeArray(),
 			 function(info) {
@@ -12,6 +16,12 @@ $("#submit").click( function() {
 	$("#myForm").submit( function() {
 	   return false;	
 	});
+}
+else
+{
+	alert("Fields must not be empty");
+}
+	
 });
  
 function clear() {
