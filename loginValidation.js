@@ -5,10 +5,10 @@ $(document).ready(function(){
 
 		var emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		//Explanation:  Look for any character followed by an @ sign with any charcter(s) following. After the characters look for a '.' followed by two to four characters
-alert(emailAddress);
+	alert(emailAddress);
 		var passwordFilter =/([a-zA-Z0-9_\.\-])/;
 		var password = document.getElementById("password").value;
-alert(password);
+	alert(password);
 
 		 if(emailAddress == "") //Check if empty
 		{
@@ -22,7 +22,7 @@ alert(password);
 		}
 		else
 		{
-			
+
 			alert("Valid Email");
 		}
 
@@ -38,7 +38,7 @@ alert(password);
 		}
 		else
 		{
-			
+
 			alert("Valid Password");
 		}
 
