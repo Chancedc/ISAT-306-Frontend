@@ -2,36 +2,37 @@ $(document).ready(function(){
 	$("#myForm").submit(function(){
 		
 		//Setting up filters and acquiring user information
-		var emailFilter = /([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+/;
-		var emailAddress = document.getElementById("email").value;
+		var userNameFilter = /^([a-zA-Z0-9_\.\-]{1,20})$/;
+		var userName = document.getElementById("username").value;
 		
-		var passwordFilter =/([a-zA-Z0-9_\.\-])/;
+		var passwordFilter =/([a-zA-Z0-9]{2,20})/;
 		var password = document.getElementById("pass").value;
 		
-		var nameFilter = /([a-zA-z\-])/;
-		var firstName = document.getElementById("fName").value;
-		var lastName = document.getElementById("lName").value;
+	//	var nameFilter = /([a-zA-z\-])/;
+	//	var firstName = document.getElementById("fName").value;
+	//	var lastName = document.getElementById("lName").value;
 		
 		//Validation Testing
 		
-		if(emailAddress == "") //Check if empty
+		if(userName == "") //Check if empty
 		{
-			alert("Registration Email Address must not be empty.");
+			alert("Username field must not be empty.");
 		}
-		else if(!emailFilter.test(emailAddress)) //Check if valid
+
+		else if(!userNameFilter.test(userName)) //Check if valid
 		{
-			alert('Please provide a valid email address. Emails must follow this format: name@institution.domain');
+			alert('Please provide a valid username. Usernames must be less than twenty characters in length, and the characters must be alphanumerical.');
 		}
 		else
 		{
-			alert("Valid Email");
+			alert("Valid Username");
 		}
 		
 		
 		
 		if(password == "")
 		{
-			alert("Password must not be empty");
+			alert("Password field must not be empty");
 		}
 		else if(!passwordFilter.test(password))
 		{
@@ -45,7 +46,7 @@ $(document).ready(function(){
 		
 		
 		
-	 	if(firstName == "")
+/**	 	if(firstName == "")
 		{
 			alert("First Name must not be empty");
 		}
@@ -74,8 +75,8 @@ $(document).ready(function(){
 			alert("Valid last Name");
 		}
 
+	**/
 	
-		
 
 	}); 
 });
