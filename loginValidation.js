@@ -1,29 +1,29 @@
 $(document).ready(function(){
 	$("#myForm").submit(function validateInformation()
 	{
-		var emailAddress = document.getElementById('email').value;
+		var username = document.getElementById('username').value;
 
-		var emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		var userNameFilter = /^([a-zA-Z0-9]{1,20})$/;
 		//Explanation:  Look for any character followed by an @ sign with any charcter(s) following. After the characters look for a '.' followed by two to four characters
 	alert(emailAddress);
-		var passwordFilter =/([a-zA-Z0-9_\.\-])/;
+		var passwordFilter =/([a-zA-Z0-9])/;
 		var password = document.getElementById("password").value;
 	alert(password);
 
-		 if(emailAddress == "") //Check if empty
+		 if(username == "") //Check if empty
 		{
 			alert("Login Email Address must not be empty.");
 			event.preventDefault();
 		}
-		else if(!emailFilter.test(emailAddress)) //Check if valid
+		else if(!userNameFilter.test(username)) //Check if valid
 		{
-			alert('Please provide a valid email address. Emails must follow this format: name@institution.domain');
+			alert('Please provide a valid username');
 			event.preventDefault();
 		}
 		else
 		{
 
-			alert("Valid Email");
+			alert("Valid username");
 		}
 
 		 if(password == "") //Check if empty
