@@ -9,10 +9,10 @@ class db
     public $table;
     function db()
     {
-        $this->host="http://sql7.000webhost.com/";
-        $this->user="a1341807_dylan";
-        $this->pass="Qw3erfgh";
-        $this->data="a1341807_test";   
+        $this->host="http://sql16.000webhost.com/";
+        $this->user="a8727958_heart";
+        $this->pass="password1";
+        $this->data="a8727958_heart";   
     }   
     public function connect()
     {
