@@ -9,7 +9,7 @@ class db
     public $table;
     function db()
     {
-        $this->host="http://sql16.000webhost.com/";
+        $this->host="mysql16.000webhost.com";
         $this->user="a8727958_heart";
         $this->pass="password1";
         $this->data="a8727958_heart";   
