@@ -41,3 +41,45 @@ src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 </div>
 	</body>
 </html>
+
+
+function setLogin ()
+
+$ mobile.changePage ($("login"), { transition : "pop" });
+$("#login a.ok").bind ("click", function (event)
+{
+	
+var login = $("#login input ").val ();
+login = $.trim (login);
+if (login)
+{
+	
+	$.ajax (
+
+
+
+	{
+url : "ajax/set_login.php",
+data : { login : login },
+complete : function (xhr, result)
+
+{
+	
+
+if (result != "success") return;
+var response = xhr.responseXML;
+var id =$(response).find ("id").text ();
+localStorage.id = id;
+$.mobile.changePage ($("home"));
+getMessages ();
+
+}
+
+
+
+
+	});
+}
+});
+}
+
