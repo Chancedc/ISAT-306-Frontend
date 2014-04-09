@@ -36,7 +36,6 @@
 		<script type= "text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
 		<script type= "text/javascript" src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
 		<script type= "text/javascript" src="Chart.js"></script>
-		<script type= "text/javascript" src="drawChart.js"></script>
 
 
 </head>
@@ -152,7 +151,7 @@
 		<div id="showButtons">
 			<ul data-role="listview" data-inset="true">
 				<li id="showData"><center>Show Data</center></li>
-				<li id="showGraph"><a href="http://dylanchance.netii.net/index.html"><center>Show Graph</center></a></li>
+				<li id="showGraph"><a href="#chart"><center>Show Graph</center></a></li>
 			</ul>
 			</div>
 			<div id="showHere">
@@ -175,31 +174,48 @@
 	
 	
 	<div data-role="content">
-		<form name='myForm'>
-		<p>Start Date: <input type='text' id='start' /></p> <br />
-		<p>End Date: <input type='text' id='end' /></p>
-		<br />
-		Device: <select id='device'>
-		<option value="0">0</option>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		</select>
-		<input type='button' onclick=""id="get_data" value='Query MySQL'/>
-		</form>
+		<!-- <form name='myForm'>
+				<p>Start Date: <input type='text' id='start' /></p> <br />
+				<p>End Date: <input type='text' id='end' /></p>
+				<br />
+				Device: <select id='device'>
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				</select>
+				<input type='button' onclick=""id="get_data" value='Query MySQL'/>
+				</form> -->
+				
+				
+				
 		<div id="ajaxDiv"></div>
 		<canvas id="canvas" height="450" width="600"></canvas>
 		   
 	</div>
+<script>
 
+	var lineChartData={
+		labels:["Jan","Feb","Mar"],
+		datasets:[
+		{
+			fillColor:"00cc00",
+			strokeColor:"#006600",
+			pointColor:"rgba(220,220,220,1)",
+			pointStrokeColor:"#006600",
+			data:[65,88,112]
+		}]
+	}
+	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
+</script>
 
-		<div id="text">
-			<p>	Testing</p>
-			<script>
-			$( '#get_data').click(function() {
-								alert("got to js");
-							});
-			</script>
-		</div>
+		<!-- <div id="text">
+					<p>	Testing</p>
+					<script>
+					$( '#get_data').click(function() {
+										alert("got to js");
+									});
+					</script>
+				</div> -->
 		
 	<div data-role="footer">
 	<h1>Contact us at ISAT306@yahoo.com</h1>

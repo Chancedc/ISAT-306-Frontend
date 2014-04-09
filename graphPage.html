@@ -1,0 +1,57 @@
+<!-- This code is adapted from http://www.tutorialspoint.com/php/php_and_ajax.htm -->
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <link rel="stylesheet" href="/resources/demos/style.css">
+   <script src="Chart.js"></script>
+      <meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+      <style>
+         canvas{
+         }
+      </style>
+</head>
+<body>
+<form name='myForm'>
+<p>Start Date: <input type='text' id='start' /></p> <br />
+<p>End Date: <input type='text' id='end' /></p>
+<br />
+Device: <select id='device'>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+</select>
+<input type='button' id="get_data" value='Query MySQL'/>
+</form>
+<div id="ajaxDiv"></div>
+<canvas id="canvas" height="450" width="600"></canvas>
+   <script>
+		$(function() {
+			$( "#start" ).datepicker();
+			$( "#end" ).datepicker();
+			$( '#get_data' ).on( 'click', function() {
+				$.get( 'ajax-example.php', { 
+					device: $( '#device' ).val(),
+					start:  $( '#start'  ).val(),
+					end:    $( '#end'    ).val() } )
+				.done( function( data ) {
+					var lineChartData = { labels: [], datasets: [] }, ds = { fillColor: '#00cc00', strokeColor: '#006600', pointColor: 'rgba(220,220,220,1)', pointStrokeColor: '#006600', data: [] };
+					$( data ).each( function( i, point ) {
+						lineChartData.labels.push( point.timestamp );
+						ds.data.push( point.power );
+						
+					});
+					lineChartData.datasets.push( ds );
+					var myLine = new Chart( document.getElementById("canvas" ).getContext("2d") ).Line( lineChartData );
+				});
+			});
+		});
+   </script>
+</body>
+</html>
+<!-- Hosting24 Analytics Code -->
+<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+<!-- End Of Analytics Code -->
