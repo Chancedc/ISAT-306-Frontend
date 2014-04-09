@@ -3,69 +3,162 @@
 
 <head profile="H.E.A.R.T">
 
-<LINK REL=StyleSheet HREF="main.css" TYPE="text/css" MEDIA=screen>
-<title>H.E.A.R.T</title>
-<link rel="icon" 
-type="image/png" 
-href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
-<script type="text/javascript">
+	<LINK REL=StyleSheet HREF="main.css" TYPE="text/css" MEDIA=screen>
+		<title>H.E.A.R.T</title>
+		<link rel="icon" 
+		type="image/png" 
+		href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_Selected_Green.png">
 
-function validateEmail()
-{
-	var userEmail = document.getElementById('email').value;
+		<script type="text/javascript">
 
-	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-//Explanation:  Look for any character followed by an @ sign with any charcter(s) following. After the characters look for a '.' followed by two to four characters
-	if(!filter.test(userEmail))
-	{
-		alert('Please provide a valid email address');
-		userEmail.focus;
-	}
-	else
-	{
-		alert('valid email');
-	}
+		function validateEmail()
+		{
+			var userEmail = document.getElementById('email').value;
 
-}
-	
-</script>
+			var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			//Explanation:  Look for any character followed by an @ sign with any charcter(s) following. After the characters look for a '.' followed by two to four characters
+			if(!filter.test(userEmail))
+			{
+				alert('Please provide a valid email address');
+				userEmail.focus;
+			}
+			else
+			{
+				alert('valid email');
+			}
 
-	
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
-	<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
+		}
+
+		</script>
+
+
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
 
 </head>
-<body>
 
-<div data-role="page">
-	<div data-role="header">
-		<h1>H.E.A.R.T Systems</h1>
-	</div><!-- /header -->
 
-	<div data-role="content">
-<div id="banner"> <center><h2> Welcome to H.E.A.R.T Systems! </h2></center>
-<center>
-<img src="https://scontent-a-iad.xx.fbcdn.net/hphotos-frc3/t1/1964783_10152299771486079_243284233_n.jpg">
-</center>
-<center><h4> Please Register or Login Below</h4></center>
-<center>
+	<body>
+
+<div data-role="page" id="welcome">
+
+
+			<div data-role="header">
+				<h1>H.E.A.R.T Systems</h1>
+			</div><!-- /header -->
+
+			<div id="banner"> <center><h2> Welcome to H.E.A.R.T Systems! </h2></center>
+				<center>
+					<img src="https://scontent-a-iad.xx.fbcdn.net/hphotos-frc3/t1/1964783_10152299771486079_243284233_n.jpg">
+				</center>
+
+
+			</div>
+
+			<div data-role="content">
+
+				<center><h4> Please Register or Login Below</h4></center>
+
+				<ul data-role="listview" data-inset="true">
+					<li><a href="#registration">Register</a></li>
+					<li><a href="#login">Log In</a></li>
+
+
+
+
+				</ul>
+				<!-- /content -->
+			</div>
+
+			<div data-role="footer">
+				<h1>Contact us at ISAT306@yahoo.com</h1>
+			</div>
 </div>
 
-<ul data-role="listview" data-inset="true">
-            <li><a href="registration.html">Register</a></li>
-            <li><a href="login.html">Log In</a></li>
-        
-           
-       
-    
-        </ul>
-<!-- /content -->
+<div data-role="page" id="registration">
 
+			<div data-role="header">
+				<h1>H.E.A.R.T Systems</h1>
+			</div>
+
+
+			<div data-role="content">
+				<form id="myForm"  method="POST">
+					Username: <input type="text" name="username"/><br />
+					Password: <input type="password" name="password"/><br />
+					<!--First Name: <input type="text" name="fname"/><br />
+					Last Name: <input type="text" name="lname"/><br />-->
+					<button id="submit">Register</button>
+				</div>
+
+
+				<div data-role="footer">
+					<h1>Contact us at ISAT306@yahoo.com</h1>
+				</div>
+
+</div>
+
+<div data-role="page" id="login">
+
+				<div data-role="header">
+					<h1>H.E.A.R.T Systems</h1>
+				</div>
+
+
+				<div data-role="content">
+					<form id="myForm" action="login.php" method="POST">
+						LoginUsername: <input type="text" name="username" id="username"/><br />
+						Password: <input type="password" name="password" id="password"/><br />
+						
+						<ul data-role="listview" data-inset="true">
+						<li><a href="#loggedInBasic"><center>Log In</center></a></li>
+						</ul>
+						
+					</form>
+				</div>
+
+
+				<div data-role="footer">
+					<h1>Contact us at ISAT306@yahoo.com</h1>
+				</div>
+
+</div>
+
+<div data-role="page" id="loggedInBasic">
+	
+<ul data-role="listview" data-inset="true" style="position:relative; width:25%; float:left;">
+	<li><a href="#welcome"><center>Log Out</center></a></li>
+</ul>
+
+<center><p style="position:relative; right:15%; top:15px;">Welcome to H.E.A.R.T!</p></center>
+	
+	<div data-role="header" style="width:100%;height:300px;">
+
+			
+			
+			<div id="heartContainer" >
+				<img src="https://scontent-a-iad.xx.fbcdn.net/hphotos-ash3/t31.0-8/1909155_10152353707256079_1106097854_o.jpg"style="height:100%; width:100%;position:relative; top:-185px;"> 
+			</div>
+		
+	</div>
+	
+	
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#data"><center>Show Data</center></a></li>
+			<li><a href="#graph"><center>Show Graph</center></a></li>
+		</ul>
+	</div>
+
+	<div data-role="footer">
+	<h1>Contact us at ISAT306@yahoo.com</h1>
+	</div>
 	
 </div>
 
-</body>
+	</body>
+
 </html>
 
 
