@@ -35,6 +35,8 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
 		<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
+		<script src="Chart.js"></script>
+
 
 </head>
 
@@ -138,17 +140,23 @@
 			
 			
 			<div id="heartContainer" >
-				<img src="https://scontent-a-iad.xx.fbcdn.net/hphotos-ash3/t31.0-8/1909155_10152353707256079_1106097854_o.jpg"style="height:100%; width:100%;position:relative; top:-185px;"> 
+				<img src="https://scontent-a-iad.xx.fbcdn.net/hphotos-ash3/t31.0-8/1909155_10152353707256079_1106097854_o.jpg"
+					 style="height:100%; width:100%;position:relative; top:-185px;"> 
 			</div>
 		
 	</div>
 	
 	
 	<div data-role="content">
-		<ul data-role="listview" data-inset="true">
-			<li><a href="#data"><center>Show Data</center></a></li>
-			<li><a href="#graph"><center>Show Graph</center></a></li>
-		</ul>
+		<div id="showButtons">
+			<ul data-role="listview" data-inset="true">
+				<li id="showData"><center>Show Data</center></li>
+				<li id="showGraph"><a href="#chart"><center>Show Graph</center></a></li>
+			</ul>
+			</div>
+			<div id="showHere">
+
+			</div>
 	</div>
 
 	<div data-role="footer">
@@ -157,6 +165,37 @@
 	
 </div>
 
+
+<div data-role="page" id="chart">
+	
+	<div data-role="header">
+		<h1>H.E.A.R.T Systems</h1>
+	</div>
+	
+	
+	<div data-role="content">
+		<form name='myForm'>
+		<p>Start Date: <input type='text' id='start' /></p> <br />
+		<p>End Date: <input type='text' id='end' /></p>
+		<br />
+		Device: <select id='device'>
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		</select>
+		<input type='button' id="get_data" value='Query MySQL'/>
+		</form>
+		<div id="ajaxDiv"></div>
+		<canvas id="canvas" height="450" width="600"></canvas>
+		   
+	</div>
+	
+	
+	<div data-role="footer">
+	<h1>Contact us at ISAT306@yahoo.com</h1>
+	</div>
+	
+</div>
 	</body>
 
 </html>
