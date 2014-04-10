@@ -1,3 +1,32 @@
+<?php
+        include_once('db.php');
+echo "made it to the server"; 
+		$username = mysql_real_escape_string( $_POST["username"] );
+		$password = mysql_real_escape_string( md5($_POST["password"]) );
+		
+
+		if( empty($username) || empty($password) )
+			echo "Username and Password Mandatory - from PHP";
+		else
+		{
+		$sql = "SELECT count(*) FROM userinfo WHERE(
+		        username='$username' 
+				AND 
+				password='$password')";
+ 
+ 
+	    $res = mysql_query($sql);
+		$row = mysql_fetch_array($res);
+ 
+		if( $row[0] > 0 )
+		 echo "Login Successful";
+		else
+		 echo "Failed To Login";
+   		}		
+?>
+
+
+
 <!DOCTYPE html>
 
 
@@ -29,32 +58,7 @@ href="http://openclipart.org/image/800px/svg_to_png/135571/OCAL_Favorites_Icon_S
             <li><a href="showgraph.html">Show Graph</a></li>
         
            
-       <?php
-        include_once('db.php');
-echo "made it to the server"; 
-		$username = mysql_real_escape_string( $_POST["username"] );
-		$password = mysql_real_escape_string( md5($_POST["password"]) );
-		
-
-		if( empty($username) || empty($password) )
-			echo "Username and Password Mandatory - from PHP";
-		else
-		{
-		$sql = "SELECT count(*) FROM userinfo WHERE(
-		        username='$username' 
-				AND 
-				password='$password')";
- 
- 
-	    $res = mysql_query($sql);
-		$row = mysql_fetch_array($res);
- 
-		if( $row[0] > 0 )
-		 echo "Login Successful";
-		else
-		 echo "Failed To Login";
-   		}		
-?>
+       
     
         </ul>
 <!-- /content -->
