@@ -26,7 +26,7 @@ header( 'Access-Control-Allow-Origin: *' );
 		if( $row[0] > 0 )
                 {
 		 echo "Login Successful";
-                 header("Location: http://isat306.com/testdata.html");
+                 header("Location: testdata.html");
                 } 
 		else
 		 echo "Failed To Login";
