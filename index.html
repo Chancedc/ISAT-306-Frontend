@@ -33,11 +33,34 @@
 
 
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css"/>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
 		<script type="text/javascript" src="Chart.js"></script>
-		<script type="text/javascript" src="drawChart.js"></script>
-
+		<!--<script type="text/javascript" src="drawChart.js"></script>-->
+		<script>
+		    $(function() {
+		    	console.log("Working?");
+		    //  $( "#start" ).datepicker();
+		    //  $( "#end" ).datepicker();
+		      $( '#get_data' ).click( function() {
+		        $.get( 'http://192.168.1.88/ajax-example.php', { 
+		          device: $( '#device' ).val() } )
+		    //      start:  $( '#start'  ).val(),
+		    //      end:    $( '#end'    ).val() } )
+		        .done( function( data ) {
+		          var lineChartData = { labels: [], datasets: [] }, ds = { fillColor: '#00cc00', strokeColor: '#006600', pointColor: 'rgba(220,220,220,1)', pointStrokeColor: '#006600', data: [] };
+		          $( data ).each( function( i, point ) {
+		            lineChartData.labels.push( point.timestamp );
+		            ds.data.push( point.power );
+		            
+		          });
+		          lineChartData.datasets.push( ds );
+		          var myLine = new Chart( document.getElementById("canvas" ).getContext("2d") ).Line( lineChartData );
+		        });
+		      });
+		    });
+  		 </script>
 
 </head>
 
@@ -176,8 +199,8 @@
 
 	<div data-role="content">
 		<form name='myForm'>
-		<p>Start Date: <input type='text' id='start' /></p> <br />
-		<p>End Date: <input type='text' id='end' /></p>
+		<!--<p>Start Date: <input type='text' id='start' /></p> <br />
+		<p>End Date: <input type='text' id='end' /></p>-->
 		<br />
 		Device: <select id='device'>
 		<option value="0">0</option>
@@ -189,28 +212,7 @@
 		<div id="ajaxDiv"></div>
 		<canvas id="canvas" height="450" width="600"></canvas>
 
-		<script>
-    $(function() {
-    //  $( "#start" ).datepicker();
-    //  $( "#end" ).datepicker();
-      $( '#get_data' ).on( 'click', function() {
-        $.get( 'http://192.168.1.88/ajax-example.php', { 
-          device: $( '#device' ).val(),
-    //      start:  $( '#start'  ).val(),
-    //      end:    $( '#end'    ).val() } )
-        .done( function( data ) {
-          var lineChartData = { labels: [], datasets: [] }, ds = { fillColor: '#00cc00', strokeColor: '#006600', pointColor: 'rgba(220,220,220,1)', pointStrokeColor: '#006600', data: [] };
-          $( data ).each( function( i, point ) {
-            lineChartData.labels.push( point.timestamp );
-            ds.data.push( point.power );
-            
-          });
-          lineChartData.datasets.push( ds );
-          var myLine = new Chart( document.getElementById("canvas" ).getContext("2d") ).Line( lineChartData );
-        });
-      });
-    });
-   </script>
+		
 		<!--<script>
 
 		var lineChartData = {
