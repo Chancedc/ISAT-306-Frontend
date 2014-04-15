@@ -152,7 +152,7 @@
 		<div id="showButtons">
 			<ul data-role="listview" data-inset="true">
 				<li id="showData"><center>Show Data</center></li>
-				<li id="showGraph"><a href="http://dylanchance.netii.net/index.html"><center>Show Graph</center></a></li>
+				<li id="showGraph"><a href="#chart"><center>Show Graph</center></a></li>
 			</ul>
 			</div>
 			<div id="showHere">
@@ -184,22 +184,49 @@
 		<option value="1">1</option>
 		<option value="2">2</option>
 		</select>
-		<input type='button' onclick=""id="get_data" value='Query MySQL'/>
+		<a href=""><input type='button' onclick=""id="get_data" value='Query MySQL'/></a>
 		</form>
 		<div id="ajaxDiv"></div>
 		<canvas id="canvas" height="450" width="600"></canvas>
+		<script>
+
+		var lineChartData = {
+			labels : ["January","February","March","April","May","June","July"],
+			datasets : [
+				{
+					fillColor : "#00cc00",
+					strokeColor : "#006600",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#006600",
+					data : [65,59,90,81,56,55,40]
+				},
+				{
+					fillColor : "rgba(151,187,205,0.5)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					data : [28,48,40,19,96,27,100]
+				}
+			]
+			
+		}
+
+	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
+	
+	</script>
 
 	</div>
 
 
-		<div id="text">
+		<!--<div id="text">
 			<p>	Testing</p>
 			<script>
 			$( '#get_data').click(function() {
 								alert("got to js");
 							});
 			</script>
-		</div>
+		</div>-->
+
 
 	<div data-role="footer">
 	<h1>Contact us at isat306@yahoo.com</h1>
