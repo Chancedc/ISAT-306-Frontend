@@ -3,7 +3,7 @@
 
 <head profile="H.E.A.R.T">
 
-	<LINK REL=StyleSheet HREF="main.css" TYPE="text/css" MEDIA=screen>
+	<link rel="stylesheet" HREF="main.css" TYPE="text/css" media="screen">
 		<title>H.E.A.R.T</title>
 		<link rel="icon" 
 		type="image/png" 
@@ -32,10 +32,9 @@
 		</script>
 
 
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css"/>
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
-		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 		<script type="text/javascript" src="Chart.js"></script>
 		<!--<script type="text/javascript" src="drawChart.js"></script>-->
 		<script>
@@ -213,35 +212,32 @@
 		<canvas id="canvas" height="450" width="600"></canvas>
 
 		
-		<!--<script>
+		<script>
+				    	$(function() {
+				    		console.log("Working?");
+		//  				$( "#start" ).datepicker();
+		//  				$( "#end" ).datepicker();
+				      	$( '#get_data' ).bind('click', function() {
+				        $.get( 'http://192.168.1.88/ajax-example.php', { 
+				          device: $( '#device' ).val() } )
+		//					start:  $( '#start'  ).val(),
+		//  	    		end:    $( '#end'    ).val() } )
+				        .done( function( data ) {
+				          var lineChartData = { labels: [], datasets: [] }, ds = { fillColor: '#00cc00', strokeColor: '#006600', pointColor: 'rgba(220,220,220,1)', pointStrokeColor: '#006600', data: [] };
+				          $( data ).each( function( i, point ) {
+				            lineChartData.labels.push( point.timestamp );
+				            ds.data.push( point.power );
 
-		var lineChartData = {
-			labels : ["January","February","March","April","May","June","July"],
-			datasets : [
-				{
-					fillColor : "#00cc00",
-					strokeColor : "#006600",
-					pointColor : "rgba(220,220,220,1)",
-					pointStrokeColor : "#006600",
-					data : [65,59,90,81,56,55,40]
-				},
-				{
-					fillColor : "rgba(151,187,205,0.5)",
-					strokeColor : "rgba(151,187,205,1)",
-					pointColor : "rgba(151,187,205,1)",
-					pointStrokeColor : "#fff",
-					data : [28,48,40,19,96,27,100]
-				}
-			]
-			
-		}
-
-	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
-	
-	</script>-->
+				          });
+				          lineChartData.datasets.push( ds );
+				          var myLine = new Chart( document.getElementById("canvas" ).getContext("2d") ).Line( lineChartData );
+				        });
+				      });
+				    });
+		  		 </script>
 
 	</div>
-
+              Time (Seconds)
 
 		<!--<div id="text">
 			<p>	Testing</p>
