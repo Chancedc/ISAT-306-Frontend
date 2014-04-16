@@ -14,6 +14,7 @@
 		function validateEmail()
 		{
 			var loginUsername = document.getElementById('loginUsername').value;
+			var loginPassword = document.getElementById('loginPassword').value;
 
 			var filter = /([a-zA-Z0-9_\.\-])/;
 			//Explanation:  Look for any character followed by an @ sign with any charcter(s) following. After the characters look for a '.' followed by two to four characters
@@ -21,11 +22,15 @@
 			{
 				alert('Please provide a valid username');
 				event.preventDefault();
-				userEmail.focus;
+				loginUsername.focus;
 			}
-			else
+		
+			
+			if(loginPassword == "")
 			{
-				alert('valid username');
+				alert("Password must not be empty");
+				event.preventDefault();
+				loginPassword.focus;
 			}
 
 		}
@@ -111,7 +116,7 @@
 
 
 				<div data-role="content">
-					<form id="myForm" action="login.php" method="POST">
+					<form id="myForm" action="http://192.168.1.88/login2.php" method="POST">
 						Username: <input type="text" name="username" id="loginUsername"/><br />
 						Password: <input type="password" name="password" id="loginPassword"/><br />
 
@@ -120,6 +125,35 @@
 						</ul>
 
 					</form>
+<div id="isUser">
+
+</div>
+
+<script>
+
+	$( '#loginButton' ).bind('click', function() {
+    
+		$("isUser").load('http://192.168.1.88/login2.php',"",function(){
+			
+			if($("#isUser").text() == 1)
+			{
+				alert("Valid user");
+			}
+			else if($("#isUser").text() == 0)
+			{
+				alert("The Username/Password you provided is not correct. Please try again.");
+				event.preventDefault();
+			}
+			else
+			{
+				alert("Something went wrong boss.");
+			}
+		});
+		
+	}
+
+</script>
+
 				</div>
 
 
@@ -132,7 +166,7 @@
 <div data-role="page" id="loggedInBasic">
 
 <ul data-role="listview" data-inset="true" style="position:relative; width:25%; float:left;">
-	<li><a href="#login"><center>Log Out</center></a></li>
+	<li><a href="#welcome"><center>Log Out</center></a></li>
 </ul>
 
 <center><p style="position:relative; right:15%; top:15px;">Welcome to H.E.A.R.T!</p></center>
@@ -192,7 +226,6 @@
 
 		<script>
 				    	$(function() {
-				    		console.log("Working?");
 		//  				$( "#start" ).datepicker();
 		//  				$( "#end" ).datepicker();
 				      	$( '#get_data' ).bind('click', function() {
