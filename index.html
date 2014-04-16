@@ -38,28 +38,29 @@
 		<script type="text/javascript" src="Chart.js"></script>
 		<!--<script type="text/javascript" src="drawChart.js"></script>-->
 		<script>
-		    $(function() {
-		    	console.log("Working?");
-		    //  $( "#start" ).datepicker();
-		    //  $( "#end" ).datepicker();
-		      $( '#get_data' ).click( function() {
-		        $.get( 'http://192.168.1.88/ajax-example.php', { 
-		          device: $( '#device' ).val() } )
-		    //      start:  $( '#start'  ).val(),
-		    //      end:    $( '#end'    ).val() } )
-		        .done( function( data ) {
-		          var lineChartData = { labels: [], datasets: [] }, ds = { fillColor: '#00cc00', strokeColor: '#006600', pointColor: 'rgba(220,220,220,1)', pointStrokeColor: '#006600', data: [] };
-		          $( data ).each( function( i, point ) {
-		            lineChartData.labels.push( point.timestamp );
-		            ds.data.push( point.power );
-		            
-		          });
-		          lineChartData.datasets.push( ds );
-		          var myLine = new Chart( document.getElementById("canvas" ).getContext("2d") ).Line( lineChartData );
-		        });
-		      });
-		    });
-  		 </script>
+				    	$(function() {
+				    		console.log("Working?");
+		//  				$( "#start" ).datepicker();
+		//  				$( "#end" ).datepicker();
+				      	$( '#get_data' ).bind('click', function() {
+				        $.get( 'http://192.168.1.88/ajax-example.php', { 
+				          device: $( '#device' ).val() } )
+		//					start:  $( '#start'  ).val(),
+		//  	    		end:    $( '#end'    ).val() } )
+				        .done( function( data ) {
+				          var lineChartData = { labels: [], datasets: [] }, ds = { fillColor: '#00cc00', strokeColor: '#006600', pointColor: 'rgba(220,220,220,1)', pointStrokeColor: '#006600', data: [] };
+				          $( data ).each( function( i, point ) {
+				            lineChartData.labels.push( point.timestamp );
+				            ds.data.push( point.power );
+
+				          });
+				          lineChartData.datasets.push( ds );
+				          var myLine = new Chart( document.getElementById("canvas" ).getContext("2d") ).Line( lineChartData );
+				        });
+				      });
+				    });
+		  		 </script>
+	
 
 </head>
 
@@ -137,7 +138,7 @@
 						Password: <input type="password" name="password" id="password"/><br />
 
 						<ul data-role="listview" data-inset="true">
-						<li><a href="#loggedInBasic"><center>Log In</center></a></li>
+						<li><a id="loginButton" href="#loggedInBasic"><center>Log In</center></a></li>
 						</ul>
 
 					</form>
@@ -212,41 +213,11 @@
 		<canvas id="canvas" height="450" width="600"></canvas>
 
 		
-		<script>
-				    	$(function() {
-				    		console.log("Working?");
-		//  				$( "#start" ).datepicker();
-		//  				$( "#end" ).datepicker();
-				      	$( '#get_data' ).bind('click', function() {
-				        $.get( 'http://192.168.1.88/ajax-example.php', { 
-				          device: $( '#device' ).val() } )
-		//					start:  $( '#start'  ).val(),
-		//  	    		end:    $( '#end'    ).val() } )
-				        .done( function( data ) {
-				          var lineChartData = { labels: [], datasets: [] }, ds = { fillColor: '#00cc00', strokeColor: '#006600', pointColor: 'rgba(220,220,220,1)', pointStrokeColor: '#006600', data: [] };
-				          $( data ).each( function( i, point ) {
-				            lineChartData.labels.push( point.timestamp );
-				            ds.data.push( point.power );
-
-				          });
-				          lineChartData.datasets.push( ds );
-				          var myLine = new Chart( document.getElementById("canvas" ).getContext("2d") ).Line( lineChartData );
-				        });
-				      });
-				    });
-		  		 </script>
-
+		
 	</div>
-              Time (Seconds)
 
-		<!--<div id="text">
-			<p>	Testing</p>
-			<script>
-			$( '#get_data').click(function() {
-								alert("got to js");
-							});
-			</script>
-		</div>-->
+
+	
 
 
 	<div data-role="footer">
