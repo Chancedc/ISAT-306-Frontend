@@ -43,7 +43,25 @@
 		<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 		<script type="text/javascript" src="Chart.js"></script>
 
-	
+		<script>
+				    	$(function() {
+				      	$( '#get_data' ).on('click', function() {
+				        $.get( 'http://192.168.1.88/ajax-example.php', { 
+				          device: $( '#device' ).val() } )
+				        .done( function( data ) {
+				          var lineChartData = { labels: [], datasets: [] }, ds = { fillColor: '#00cc00', strokeColor: '#006600', pointColor: 'rgba(220,220,220,1)', pointStrokeColor: '#006600', data: [] };
+				          $( data ).each( function( i, point ) {
+				            lineChartData.labels.push( point.timestamp );
+				            ds.data.push( point.power );
+
+				          });
+				          lineChartData.datasets.push( ds );
+
+				          var myLine = new Chart( document.getElementById("canvas" ).getContext("2d") ).Line( lineChartData );
+				        });
+				      });
+				    });
+		</script>	
 
 </head>
 
@@ -224,25 +242,7 @@
 		<div id="ajaxDiv"></div>
 		<canvas id="canvas" height="450" width="600"></canvas>
 
-		<script>
-				    	$(function() {
-				      	$( '#get_data' ).on('click', function() {
-				        $.get( 'http://192.168.1.88/ajax-example.php', { 
-				          device: $( '#device' ).val() } )
-				        .done( function( data ) {
-				          var lineChartData = { labels: [], datasets: [] }, ds = { fillColor: '#00cc00', strokeColor: '#006600', pointColor: 'rgba(220,220,220,1)', pointStrokeColor: '#006600', data: [] };
-				          $( data ).each( function( i, point ) {
-				            lineChartData.labels.push( point.timestamp );
-				            ds.data.push( point.power );
 
-				          });
-				          lineChartData.datasets.push( ds );
-				          var myLine = null;
-				          myLine = new Chart( document.getElementById("canvas" ).getContext("2d") ).Line( lineChartData );
-				        });
-				      });
-				    });
-		  		 </script>
 		
 	</div>
 
