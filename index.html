@@ -228,7 +228,7 @@
 				    	$(function() {
 		//  				$( "#start" ).datepicker();
 		//  				$( "#end" ).datepicker();
-				      	$( '#get_data' ).bind('click', function() {
+				      	$( '#get_data' ).on('click', function() {
 				        $.get( 'http://192.168.1.88/ajax-example.php', { 
 				          device: $( '#device' ).val() } )
 		//					start:  $( '#start'  ).val(),
@@ -241,6 +241,7 @@
 
 				          });
 				          lineChartData.datasets.push( ds );
+
 				          var myLine = new Chart( document.getElementById("canvas" ).getContext("2d") ).Line( lineChartData );
 				        });
 				      });
